@@ -6,12 +6,8 @@ void ofApp::setup(){
     Face.load("face2.jpg");
     makeFaceArr();
     
-//    SampleSrc.load("sample.jpg");
-//    int iWidth = SampleSrc.getWidth();
-//    int iHeight = SampleSrc.getHeight();
-//    SampleDest.allocate(iWidth, iHeight, OF_IMAGE_COLOR);
-//    makeNewImage();
-//    SampleDest.update();
+    SampleSrc.load("sample.jpg");
+    makeNewImage();
     
 }
 
@@ -76,6 +72,34 @@ void ofApp::makeFaceArr(){
 //--------------------------------------------------------------
 void ofApp::makeNewImage(){
     
+    /*
+     * i am not reusing the sorting from makeFaceArr() because
+     * there is not an assumption that can be made about the data
+     * (so counting sort is not the best algorithm to use)
+     */
+    
+    int iWidth = SampleSrc.getWidth();
+    int iHeight = SampleSrc.getHeight();
+    int n = iWidth*iHeight;
+    ofPixels src = SampleSrc.getPixels();
+    
+    
+    vector<indexBrightness> sampleBrightness(n);
+    
+    for (int i = 0; i < n; i++) {
+        sampleBrightness[i].i = i;
+        sampleBrightness[i].brightness = src.getColor(i).getBrightness();
+    }
+    
+    
+    /* TODO:
+     *  sort sampleBrightness
+     *  map values to indexes in SampleDest matching faceArr indexes
+     */
+    
+    SampleDest.allocate(iWidth, iHeight, OF_IMAGE_COLOR);
+    
+    SampleDest.update();
 }
 
 //--------------------------------------------------------------
