@@ -30,6 +30,7 @@ void ofApp::draw(){
 
 // creates array of pixels in face sorted by brightness (ascending) while keeping track of original index
 void ofApp::makeFaceArr(){
+    
     /*
      * this function uses counting sort (https://www.geeksforgeeks.org/counting-sort/)
      * due to the fact that the difference between the number of values being sorted (786432)
@@ -69,6 +70,8 @@ void ofApp::makeFaceArr(){
     
 }
 
+bool compare(ofApp::indexBrightness x, ofApp::indexBrightness y) { return x.brightness < y.brightness; };
+
 //--------------------------------------------------------------
 void ofApp::makeNewImage(){
     
@@ -76,6 +79,7 @@ void ofApp::makeNewImage(){
      * i am not reusing the sorting from makeFaceArr() because
      * there is not an assumption that can be made about the data
      * (so counting sort is not the best algorithm to use)
+     * therefore, i will just use std::sort which is O(nlogn)
      */
     
     int iWidth = SampleSrc.getWidth();
@@ -91,15 +95,15 @@ void ofApp::makeNewImage(){
         sampleBrightness[i].brightness = src.getColor(i).getBrightness();
     }
     
+    sort(sampleBrightness.begin(), sampleBrightness.end(), compare);
     
     /* TODO:
-     *  sort sampleBrightness
      *  map values to indexes in SampleDest matching faceArr indexes
      */
     
-    SampleDest.allocate(iWidth, iHeight, OF_IMAGE_COLOR);
-    
-    SampleDest.update();
+//    SampleDest.allocate(iWidth, iHeight, OF_IMAGE_COLOR);
+//    
+//    SampleDest.update();
 }
 
 //--------------------------------------------------------------
