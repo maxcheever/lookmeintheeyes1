@@ -3,11 +3,16 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    Face.load("face2.jpg");
+    Face.load("face.jpg");
+    Face.setImageType(OF_IMAGE_GRAYSCALE);
     makeFaceArr();
     
     SampleSrc.load("sample.jpg");
+    SampleSrc.setImageType(OF_IMAGE_GRAYSCALE);
+    SampleSrc.setUseTexture(false);
+    SampleDest.allocate(1024, 768, OF_IMAGE_GRAYSCALE);
     makeNewImage();
+    SampleDest.update();
     
 }
 
@@ -21,9 +26,9 @@ void ofApp::draw(){
     ofBackground(255);
     ofSetColor(255);
     
-    int iWidth = Face.getWidth();
-    int iHeight = Face.getHeight();
-    Face.draw(0,0, iWidth, iHeight);
+    int iWidth = SampleDest.getWidth();
+    int iHeight = SampleDest.getHeight();
+    SampleDest.draw(0,0, iWidth, iHeight);
     
     
 }
@@ -90,6 +95,7 @@ void ofApp::makeNewImage(){
     
     vector<indexBrightness> sampleBrightness(n);
     
+    // populate temp brightness array
     for (int i = 0; i < n; i++) {
         sampleBrightness[i].i = i;
         sampleBrightness[i].brightness = src.getColor(i).getBrightness();
@@ -97,13 +103,11 @@ void ofApp::makeNewImage(){
     
     sort(sampleBrightness.begin(), sampleBrightness.end(), compare);
     
-    /* TODO:
-     *  map values to indexes in SampleDest matching faceArr indexes
-     */
+    // map pixels to the correct position
+    for (int i = 0; i < n; i++) {
+        SampleDest.setColor(faceArr[i].i, SampleSrc.getColor(sampleBrightness[i].i));
+    }
     
-//    SampleDest.allocate(iWidth, iHeight, OF_IMAGE_COLOR);
-//    
-//    SampleDest.update();
 }
 
 //--------------------------------------------------------------
