@@ -22,12 +22,10 @@ void ofApp::setup(){
     // Face.setImageType(OF_IMAGE_GRAYSCALE);
     makeFaceArr();
     
-    SampleSrc.load("sample3.jpg");
+    SampleSrc.load("face4.jpg");
     // Face.setImageType(OF_IMAGE_GRAYSCALE);
     SampleSrc.setUseTexture(false);
-    SampleDest.allocate(1024, 768, OF_IMAGE_COLOR);
     makeNewImage();
-    SampleDest.update();
     
 }
 
@@ -118,10 +116,14 @@ void ofApp::makeNewImage(){
     
     sort(sampleBrightness.begin(), sampleBrightness.end(), compare);
     
+    SampleDest.allocate(iWidth, iHeight, OF_IMAGE_COLOR);
+    
     // map pixels to the correct position
     for (int i = 0; i < n; i++) {
         SampleDest.setColor(faceArr[i].i*3, SampleSrc.getColor(sampleBrightness[i].i*3));
     }
+    
+    SampleDest.update();
     
 }
 
