@@ -51,6 +51,8 @@ for (int i = 0; i < n; i++) {
 Of course, you would have to multiply `" ".i` by 3 if working with color images
 
 ## Results
-To test the processor, I downloaded source images from [Unsplash](https://unsplash.com) and resized them to all be 1024x768. For the target images, I used 1024x768 renders of a face I made in Maya.
+To test the processor, I downloaded source images from [Unsplash](https://unsplash.com) and resized them to all be 1024x768. For the target images, I used 1024x768 renders of a face I made in Maya. <br>
+<img src="face.jpg" alt="drawing" width="200"/> <img src="face2.jpg" alt="drawing" width="200"/> <img src="face3.jpg" alt="drawing" width="200"/> <img src="face3.jpg" alt="drawing" width="200"/>
+<img src="sample.jpg" alt="drawing" width="200"/> <img src="sample2.jpg" alt="drawing" width="200"/> <img src="sample3.jpg" alt="drawing" width="200"/> <img src="sample4.jpg" alt="drawing" width="200"/>
 
 This project is a part of DART 496, an image/video processing and remix theory independent study with [Professor Eduardo Navas](http://navasse.net/docs/index.php). Resources used for _Look Me in the Eyes I_ include the [openFrameworks graphics documentation](https://openframeworks.cc/documentation/graphics/) and the chapter ["Image Processing and Computer Vision" from _ofBook_](https://openframeworks.cc/ofBook/chapters/image_processing_computer_vision.html)
