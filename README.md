@@ -4,8 +4,22 @@
 ## Technical Approach
 _Look Me in the Eyes I_ is an image processor that rearranges or "remixes" the pixels of an source image to resemble a target image as closely as possible. I chose to accomplish this through the use of [openFrameworks](https://openframeworks.cc), an open source C++ toolkit for creative coding.
 ### Target Image Pixel Sorting
-The best way to create a remix of the source image that closely resembled the target image is to map the pixels according to brightness. Therefore, I needed to know in what positions the brightest pixels  
+The best way to create a remix of the source image that closely resembles the target image is to map the pixels according to brightness. Therefore, I needed to know in what order the pixels were in terms of their brightness. In computer memory, pixels for grayscale images are stored as an array of values where each pixel is represented by a single 8-bit number from 0 (black) to 255 (white) that looks something like this:
+```
+[  215  ,  125  ,  86  ,  35  ,  202  ,  174  ]
+|______||______||_____||_____||_______||______|
+ pixel0  pixel1  pixel2 pixel3  pixel4  pixel5
 
+```
+For color images, pixels are still stored as an array of 8-bit numbers, but now each pixel takes up three indexes for red, green, and blue values like so:
+```
+[  215  ,  125  ,  86  ,  35  ,  202  ,  174  ]
+|______________________||_____________________|
+   red    green   blue    red   green    blue
+
+          pixel0                pixel1
+```
+Similarly, some images also use a fourth index for an "alpha" channel.
 
 ## Results
 
