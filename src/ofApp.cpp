@@ -14,7 +14,7 @@ void ofApp::setup(){
      * [0-255, 0-255, 0-255, 0-255, 0-255, 0-255]
      *  |__________________| |__________________|
      *        pixel1                pixel2
-     * thus we must use the multiplaction to get to the starting index of each color
+     * thus we must use the multiplication to get to the starting index of each color
      */
     
     // loaded jpg are OF_IMAGE_COLOR by default
