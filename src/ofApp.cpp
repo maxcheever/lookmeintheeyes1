@@ -3,14 +3,29 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
+    /*
+     * for grayscale mapping, you must remove the multiplication on index "i" on
+     * lines 60, 107, and 114. this is due to the fact that pixels are stored
+     * differently for grayscale and color images. for grayscale, they are stored like so:
+     * [0-255, 0-255, 0-255]
+     *  |____| |____| |____|
+     *  pixel1 pixel2 pixel3
+     * for color, the red, green and blue values all need to be stored for each pixel like so:
+     * [0-255, 0-255, 0-255, 0-255, 0-255, 0-255]
+     *  |__________________| |__________________|
+     *        pixel1                pixel2
+     * thus we must use the multiplaction to get to the starting index of each color
+     */
+    
+    // loaded jpg are OF_IMAGE_COLOR by default
     Face.load("face.jpg");
-    Face.setImageType(OF_IMAGE_GRAYSCALE);
+    // Face.setImageType(OF_IMAGE_GRAYSCALE);
     makeFaceArr();
     
-    SampleSrc.load("sample.jpg");
-    SampleSrc.setImageType(OF_IMAGE_GRAYSCALE);
+    SampleSrc.load("sample3.jpg");
+    // Face.setImageType(OF_IMAGE_GRAYSCALE);
     SampleSrc.setUseTexture(false);
-    SampleDest.allocate(1024, 768, OF_IMAGE_GRAYSCALE);
+    SampleDest.allocate(1024, 768, OF_IMAGE_COLOR);
     makeNewImage();
     SampleDest.update();
     
@@ -51,7 +66,7 @@ void ofApp::makeFaceArr(){
     // populate temp brightness array
     for (int i = 0; i < n; i++) {
         faceBrightness[i].i = i;
-        faceBrightness[i].brightness = Face.getColor(i).getBrightness();
+        faceBrightness[i].brightness = Face.getColor(i*3).getBrightness();
         
         if (faceBrightness[i].brightness > m)
             m = faceBrightness[i].brightness;
@@ -98,14 +113,14 @@ void ofApp::makeNewImage(){
     // populate temp brightness array
     for (int i = 0; i < n; i++) {
         sampleBrightness[i].i = i;
-        sampleBrightness[i].brightness = src.getColor(i).getBrightness();
+        sampleBrightness[i].brightness = src.getColor(i*3).getBrightness();
     }
     
     sort(sampleBrightness.begin(), sampleBrightness.end(), compare);
     
     // map pixels to the correct position
     for (int i = 0; i < n; i++) {
-        SampleDest.setColor(faceArr[i].i, SampleSrc.getColor(sampleBrightness[i].i));
+        SampleDest.setColor(faceArr[i].i*3, SampleSrc.getColor(sampleBrightness[i].i*3));
     }
     
 }
