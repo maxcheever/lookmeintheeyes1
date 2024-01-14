@@ -26,11 +26,22 @@ The best way to create a remix of the source image that closely resembles the ta
 My original thought was to sort the pixels of the source image using counting sort just as I had for the target image. However, using the `std::sort()` function from C++ provided me with much more aesthetically pleasing results without sacrificing much efficiency (`std::sort()` is O(nlogn) and uses [introsort](https://www.geeksforgeeks.org/internal-details-of-stdsort-in-c/), which is perhaps the best algorithm to use if you know nothing about your data). For more on the aesthetics, see the *Results* section.
 
 ### Pixel Mapping
-At this point I have two arrays of structs ordered by brightness. All that's left to do is map the pixels in my source array (let's call it `sampleBrightness`) to the index contained in the matching index of the target array (`faceArr`) in a new image buffer. That might be a little confusing, so here's the code and a picture:
+At this point I have two arrays of structs ordered by brightness. All that's left to do is map the pixels from the indexes in my source array (let's call it `sampleBrightness`) to the index contained in the matching index of the target array (`faceArr`) in a new image buffer. That might be a little confusing, so here's a picture and the code:
 ```
-                     brightness  index in original image
-faceArr            [(    192    ,           2           ), (112,0), (71,1)]
-sampleBrightness
+                   brightness  index in original image
+faceArr          [(    192    ,           2           ), (112,0), (71,1)]
+
+sampleBrightness [(166,1), (91, 2), (12,0)]
+                        \     |        |
+                         \    |        |
+                          \  /         | 
+                           \/          |
+                           /\           \
+                          /  \___________\____________________________________________
+                         |                \__________                                 |
+                         V                           V                                V
+Image [pixel at index 2 in source image, pixel at index 0 in source image, pixel at index 1 in source image]
+Index                0                                 1                                 2
 ```
 
 ## Results
