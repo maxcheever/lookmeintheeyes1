@@ -90,7 +90,7 @@ void ofApp::makeFaceArr(){
 
 bool compare(ofApp::indexBrightness x, ofApp::indexBrightness y) { return x.brightness < y.brightness; };
 
-//--------------------------------------------------------------
+// makes the output image
 void ofApp::makeNewImage(){
     
     /*
