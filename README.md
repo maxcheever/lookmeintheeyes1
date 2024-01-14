@@ -43,6 +43,12 @@ sampleBrightness [(166,1), (91, 2), (12,0)]
 Image [pixel at index 2 in source image, pixel at index 0 in source image, pixel at index 1 in source image]
 Index                0                                 1                                 2
 ```
+```C++
+for (int i = 0; i < n; i++) {
+    Image.setColor(faceArr[i].i, SampleSrc.getColor(sampleBrightness[i].i));
+}
+```
+Of course, you would have to multiply `" ".i` by 3 if working with color images
 
 ## Results
 
