@@ -18,14 +18,16 @@ void ofApp::setup(){
      */
     
     // loaded jpg are OF_IMAGE_COLOR by default
-    Face.load("face.jpg");
+    Face.load("face4.jpg");
     // Face.setImageType(OF_IMAGE_GRAYSCALE);
     makeFaceArr();
     
-    SampleSrc.load("face4.jpg");
+    SampleSrc.load("sample3.jpg");
     // Face.setImageType(OF_IMAGE_GRAYSCALE);
     SampleSrc.setUseTexture(false);
     makeNewImage();
+    
+//    SampleDest.save("face5.jpg");
     
 }
 
@@ -45,6 +47,8 @@ void ofApp::draw(){
     
     
 }
+
+bool compare(ofApp::indexBrightness x, ofApp::indexBrightness y) { return x.brightness < y.brightness; };
 
 // creates array of pixels in face sorted by brightness (ascending) while keeping track of original index
 void ofApp::makeFaceArr(){
@@ -88,16 +92,14 @@ void ofApp::makeFaceArr(){
     
 }
 
-bool compare(ofApp::indexBrightness x, ofApp::indexBrightness y) { return x.brightness < y.brightness; };
-
 // makes the output image
 void ofApp::makeNewImage(){
     
     /*
-     * i am not reusing the sorting from makeFaceArr() because
-     * there is not an assumption that can be made about the data
-     * (so counting sort is not the best algorithm to use)
-     * therefore, i will just use std::sort which is O(nlogn)
+     * it would make sense to use counting sort again here due to the fact
+     * since the range of values is still much smaller than the number of values,
+     * but i noticed that using std::sort here creates a distribution of color
+     * that is much smoother in the output (std::sort is still efficient at O(nlogn))
      */
     
     int iWidth = SampleSrc.getWidth();
