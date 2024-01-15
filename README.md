@@ -61,4 +61,8 @@ From left to right: counting sort on source and target, intro sort on source and
 <img src="results/countcount3.png" alt="drawing" width="200"/> <img src="results/introboth3.png" alt="drawing" width="200"/> <img src="results/countintro3.png" alt="drawing" width="200"/> <img src="results/introcount3.png" alt="drawing" width="200"/> <br>
 <img src="results/countcount1.png" alt="drawing" width="200"/> <img src="results/introboth1.png" alt="drawing" width="200"/> <img src="results/countintro1.png" alt="drawing" width="200"/> <img src="results/introcount1.png" alt="drawing" width="200"/>
 
+### Differing Pixel Brightness Distributions
+~ show example of really bright source images on the dark target images ~
+<br><br>
+
 This project is the first of three parts of DART 496, an image/video processing and remix theory independent study with [Professor Eduardo Navas](http://navasse.net/docs/index.php). Resources used for _Look Me in the Eyes I_ include the [openFrameworks graphics documentation](https://openframeworks.cc/documentation/graphics/) and the chapter ["Image Processing and Computer Vision" from _ofBook_](https://openframeworks.cc/ofBook/chapters/image_processing_computer_vision.html)
