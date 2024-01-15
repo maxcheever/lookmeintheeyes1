@@ -52,8 +52,8 @@ Of course, you would have to multiply `" ".i` by 3 if working with color images
 
 ## Results
 To test the processor, I downloaded source images from [Unsplash](https://unsplash.com) and resized them to all be 1024x768. For the target images, I used 1024x768 renders of a face model I made in Maya. <br>
-<img src="face.jpg" alt="drawing" width="200"/> <img src="face2.jpg" alt="drawing" width="200"/> <img src="face3.jpg" alt="drawing" width="200"/> <img src="face3.jpg" alt="drawing" width="200"/>
-<img src="sample.jpg" alt="drawing" width="200"/> <img src="sample2.jpg" alt="drawing" width="200"/> <img src="sample3.jpg" alt="drawing" width="200"/> <img src="sample4.jpg" alt="drawing" width="200"/>
+<img src="images/face.jpg" alt="drawing" width="200"/> <img src="images/face2.jpg" alt="drawing" width="200"/> <img src="images/face3.jpg" alt="drawing" width="200"/> <img src="images/face4.jpg" alt="drawing" width="200"/>
+<img src="images/sample.jpg" alt="drawing" width="200"/> <img src="images/sample2.jpg" alt="drawing" width="200"/> <img src="images/sample3.jpg" alt="drawing" width="200"/> <img src="images/sample4.jpg" alt="drawing" width="200"/>
 
 ### Sorting Algorithm Differences
 The way in which `std::sort()` and counting sort conduct sorting are very different (one is sorting based on comparison and one is not), so the way that equal values are ordered in the final array are different between them. This is immediately apparent when looking at the outputs of the processor when using each algorithm. Below is the output using the first face model above as the target image and the third sample image as the source image with each of the sorting algorithms for each function: <br>
