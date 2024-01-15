@@ -51,11 +51,12 @@ for (int i = 0; i < n; i++) {
 Of course, you would have to multiply `" ".i` by 3 if working with color images
 
 ## Results
-To test the processor, I downloaded source images from [Unsplash](https://unsplash.com) and resized them to all be 1024x768. For the target images, I used 1024x768 renders of a face I made in Maya. <br>
+To test the processor, I downloaded source images from [Unsplash](https://unsplash.com) and resized them to all be 1024x768. For the target images, I used 1024x768 renders of a face model I made in Maya. <br>
 <img src="face.jpg" alt="drawing" width="200"/> <img src="face2.jpg" alt="drawing" width="200"/> <img src="face3.jpg" alt="drawing" width="200"/> <img src="face3.jpg" alt="drawing" width="200"/>
 <img src="sample.jpg" alt="drawing" width="200"/> <img src="sample2.jpg" alt="drawing" width="200"/> <img src="sample3.jpg" alt="drawing" width="200"/> <img src="sample4.jpg" alt="drawing" width="200"/>
 
 ### Sorting Algorithm Differences
-The way in which `std::sort()` and counting sort conduct sorting are very different (one is sorting based on comparison and one is not), so the way that equal values are ordered in the final array are different between them. This is immediately apparent when looking at the outputs of the processor when using each algorithm. Below is the output using the first face model above as the target image and the third sample image as the source image with each of the sorting algorithms for each function:
+The way in which `std::sort()` and counting sort conduct sorting are very different (one is sorting based on comparison and one is not), so the way that equal values are ordered in the final array are different between them. This is immediately apparent when looking at the outputs of the processor when using each algorithm. Below is the output using the first face model above as the target image and the third sample image as the source image with each of the sorting algorithms for each function: <br>
+From left to right: counting sort on source and target, intro sort on source and target, counting sort on source and intro sort on target, intro sort on source and counting source on target
 
 This project is a part of DART 496, an image/video processing and remix theory independent study with [Professor Eduardo Navas](http://navasse.net/docs/index.php). Resources used for _Look Me in the Eyes I_ include the [openFrameworks graphics documentation](https://openframeworks.cc/documentation/graphics/) and the chapter ["Image Processing and Computer Vision" from _ofBook_](https://openframeworks.cc/ofBook/chapters/image_processing_computer_vision.html)
