@@ -4,6 +4,8 @@
 ## Technical Approach
 _Look Me in the Eyes I_ is an image processor that rearranges or "remixes" the pixels of an source image to resemble a target image as closely as possible. I chose to accomplish this through the use of [openFrameworks](https://openframeworks.cc), an open source C++ toolkit for creative coding.
 ### Target Image Pixel Sorting
+<sub>Skip to [Results](#results) if you don't care for programming or computers :) </sub> 
+<br><br>
 In computer memory, pixels for grayscale images are stored as an array of values where each pixel is represented by a single 8-bit number from 0 (black) to 255 (white) that looks something like this:
 ```
 [  215  ,  125  ,  86  ,  35  ,  202  ,  174  ]
@@ -60,6 +62,8 @@ The way in which `std::sort()` and counting sort conduct sorting are very differ
 From left to right: counting sort on source and target, intro sort on source and target, counting sort on source and intro sort on target, intro sort on source and counting source on target <br>
 <img src="results/countcount3.png" alt="drawing" width="200"/> <img src="results/introboth3.png" alt="drawing" width="200"/> <img src="results/countintro3.png" alt="drawing" width="200"/> <img src="results/introcount3.png" alt="drawing" width="200"/> <br>
 <img src="results/countcount1.png" alt="drawing" width="200"/> <img src="results/introboth1.png" alt="drawing" width="200"/> <img src="results/countintro1.png" alt="drawing" width="200"/> <img src="results/introcount1.png" alt="drawing" width="200"/>
+<br>
+The smoothest output in terms of distribution of color seems to be using intro sort on the source image and counting sort on the target image. However, I am working with a small range of source and target images so this may only be the case for the specific target images I am using.
 
 ### Differing Pixel Brightness Distributions
 ~ show example of really bright source images on the dark target images ~
