@@ -66,7 +66,10 @@ From left to right: counting sort on source and target, intro sort on source and
 The smoothest output in terms of distribution of color seems to be using intro sort on the source image and counting sort on the target image. However, I am working with a small range of source and target images so this may only be the case for the specific target images I am using.
 
 ### Differing Pixel Brightness Distributions
-~ show example of really bright source images on the dark target images ~
+One limitation that this processor posesses is the fact that it is not changing the value of any pixels, just rearranging them. This means that when the source and target image have very different distributions of brightness (e.g. a bright source image and a dark target image), the results tend to bear less resemblance to the target image than if they had similar distributions. To illustrate this, here are some examples using the second and fourth sample images as sources and the first and fourth faces as targets: <br>
+<img src="results/face1sample2.png" alt="drawing" width="200"/> <img src="results/face4sample2.png" alt="drawing" width="200"/> <img src="results/face1sample4.png" alt="drawing" width="200"/> <img src="results/face4sample4.png" alt="drawing" width="200"/> <br>
+Now, these outputs still resemble the target image, but one can imagine with a darker, more complex target, the result using a bright source may look extremely washed out or even unrecognizable.
+
 <br><br>
 
 This project is the first of three parts of DART 496, an image/video processing and remix theory independent study with [Professor Eduardo Navas](http://navasse.net/docs/index.php). Resources used for _Look Me in the Eyes I_ include the [openFrameworks graphics documentation](https://openframeworks.cc/documentation/graphics/) and the chapter ["Image Processing and Computer Vision" from _ofBook_](https://openframeworks.cc/ofBook/chapters/image_processing_computer_vision.html)
