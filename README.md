@@ -71,8 +71,12 @@ One limitation that this processor posesses is the fact that it is not changing 
 Now, these outputs still resemble the target image, but one can imagine with a darker, more complex target, the result using a bright source may look extremely washed out or even unrecognizable.
 
 ### Selected Results
-Below are some of the more desirable results along with a interesting output that comes from using different image formats for the source and target (remember the multiplication from before?):<br>
-
+Below are some of the more desirable results along with an intriguing output that comes from using different image formats for the source and target (remember the multiplication from before?):<br>
+<img src="results/face3sample3.png" alt="drawing" width="400"/> <img src="results/face3sample1.png" alt="drawing" width="400"/> <br>
+<img src="results/face1sample3.png" alt="drawing" width="400"/> <img src="results/face1sample1.png" alt="drawing" width="400"/> <br>
+<img src="results/face4sample3.png" alt="drawing" width="400"/> <img src="results/face4sample1.png" alt="drawing" width="400"/> <br>
+<img src="results/face5sample3.png" alt="drawing" width="400"/> <img src="results/face5sample1.png" alt="drawing" width="400"/> <br>
+<img src="results/glitch.tif" alt="drawing" width="400"/> <img src="results/glitch2.tif" alt="drawing" width="400"/> <br>
 
 
 <br><br>
