@@ -70,6 +70,11 @@ One limitation that this processor posesses is the fact that it is not changing 
 <img src="results/face1sample2.png" alt="drawing" width="200"/> <img src="results/face4sample2.png" alt="drawing" width="200"/> <img src="results/face1sample4.png" alt="drawing" width="200"/> <img src="results/face4sample4.png" alt="drawing" width="200"/> <br>
 Now, these outputs still resemble the target image, but one can imagine with a darker, more complex target, the result using a bright source may look extremely washed out or even unrecognizable.
 
+### Selected Results
+Below are some of the more desirable results along with a interesting output that comes from using different image formats for the source and target (remember the multiplication from before?):<br>
+
+
+
 <br><br>
 
 This project is the first of three parts of DART 496, an image/video processing and remix theory independent study with [Professor Eduardo Navas](http://navasse.net/docs/index.php). Resources used for _Look Me in the Eyes I_ include the [openFrameworks graphics documentation](https://openframeworks.cc/documentation/graphics/) and the chapter ["Image Processing and Computer Vision" from _ofBook_](https://openframeworks.cc/ofBook/chapters/image_processing_computer_vision.html)
