@@ -79,7 +79,8 @@ Below are some of the more desirable results along with an intriguing output tha
 <img src="results/glitch.tif" alt="drawing" width="400"/> <img src="results/glitch2.tif" alt="drawing" width="400"/> <br>
 
 ### Other Uses
-I believe it is important to note that I have used this processor in a very limited capacity, choosing to only use the face models as my target. It can be used with any source and target images, producing a result like the one I have below from using the first sample as the source image and the third image as the target:
+I believe it is important to note that I have used this processor in a very limited capacity, choosing to only use the face models as my target. It can be used with any source and target images, producing results like the ones I have below from using the sample images as source and target images: <br>
+<img src="results/sample2sample4.png" alt="drawing" width="200"/> <img src="results/sample3sample2.png" alt="drawing" width="200"/> <img src="results/sample3sample1.png" alt="drawing" width="200"/> <img src="results/sample1sample3.png" alt="drawing" width="200"/> <br>
 
 
 <br><br>
