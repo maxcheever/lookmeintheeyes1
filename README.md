@@ -1,5 +1,4 @@
 # _Look Me in the Eyes I_
-<br><br><br>
 ## Technical Approach
 _Look Me in the Eyes I_ is an image processor that rearranges or "remixes" the pixels of an source image to resemble a target image as closely as possible. I chose to accomplish this through the use of [openFrameworks](https://openframeworks.cc), an open source C++ toolkit for creative coding.
 ### Target Image Pixel Sorting
