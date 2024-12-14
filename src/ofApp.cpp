@@ -57,7 +57,7 @@ void ofApp::makeFaceArr(){
      * this function uses counting sort (https://www.geeksforgeeks.org/counting-sort/)
      * due to the fact that the difference between the number of values being sorted (786432)
      * is much larger than the range of values represented (0-255)
-     * essentially, this is nearly O(n) on the array size due to the number of repeated values
+     * this is nearly O(n) on the array size due to the number of repeated values
      */
     
     int n = Face.getWidth()*Face.getHeight();
